@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <div th:each="book : ${books}">
+    <a th:href="@{books/{id}(id=${book.getId()})}"
+       th:text="${book.getTitle() + ' by ' + book.getAuthor() + ', ' + book.getYear()}"></a>
+
+  </div>
+  <br/>
+  <hr/>
+  <a href="/books/new">Add book</a>
+  <br/>
+  <p style="margin-top: 30px"><a href="/people">People page</a></p>
+</body>
+</html>

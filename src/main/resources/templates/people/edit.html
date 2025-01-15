@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit</title>
+</head>
+<body>
+  <form th:method="PATCH" th:action="@{/people/{id}(id=${person.getId()})}" th:object="${person}">
+    <label for="forename">Enter forename: </label>
+    <input type="text" th:field="*{forename}" id="forename">
+    <div style="color:red" th:if="${#fields.hasErrors('forename')}" th:errors="*{forename}">error</div>
+      <br/>
+    <label for="surname">Enter surname: </label>
+    <input type="text" th:field="*{surname}" id="surname">
+    <div style="color:red" th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}">error</div>
+      <br/>
+    <label for="age">Enter age: </label>
+    <input type="text" th:field="*{age}" id="age">
+    <div style="color:red" th:if="${#fields.hasErrors('age')}" th:errors="*{age}">error</div>
+    <br/>
+      <input type="submit" value="Update!"/>
+  </form>
+
+</body>
+</html>
